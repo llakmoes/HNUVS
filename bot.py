@@ -6,9 +6,18 @@ import dj_database_url
 from telegram.ext import Updater, MessageHandler, Filters
 CLEARDB_DATABASE_URL=os.environ['CLEARDB_DATABASE_URL']
 db_info = dj_database_url.config(default=CLEARDB_DATABASE_URL)
-print(db_info)
-cnx = mysql.connector.connect(**db_info)
+config={
 
+}
+conn = mysql.connector.connect(
+    host=config['HOST'],
+    port=config['PORT'],
+    user=config['USER'],
+    passwd=config['PASSWORD'],
+    db=config['NAME'],
+    use_unicode=True,
+    connect_timeout=1000
+)
 TOKEN = '560289646:AAFzO2loYla3rOfMPBT_1S9YihU1JYN6dBU'
 PORT = int(os.environ.get('PORT', '5000'))
 
