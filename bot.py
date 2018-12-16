@@ -9,7 +9,6 @@ db_info = dj_database_url.config(default=CLEARDB_DATABASE_URL)
 
 conn = mysql.connector.connect(
     host=db_info['HOST'],
-    port=db_info['PORT'],
     user=db_info['USER'],
     passwd=db_info['PASSWORD'],
     db=db_info['NAME'],
