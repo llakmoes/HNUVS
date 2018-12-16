@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import os
+import mysql.connector
+import dj_database_url
 from telegram.ext import Updater, MessageHandler, Filters
+CLEARDB_DATABASE_URL=os.environ['CLEARDB_DATABASE_URL'] 
+db_info = dj_database_url.config(default=CLEARDB_DATABASE_URL)
+cnx = mysql.connector.connect(**db_info)
 
 TOKEN = '560289646:AAFzO2loYla3rOfMPBT_1S9YihU1JYN6dBU'
 PORT = int(os.environ.get('PORT', '5000'))
