@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import os
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler
 import logging
-TOKEN = "560289646:AAFzO2loYla3rOfMPBT_1S9YihU1JYN6dBU"
-PORT = int(os.environ.get('PORT', '8443'))
+TOKEN = '560289646:AAFzO2loYla3rOfMPBT_1S9YihU1JYN6dBU'
+PORT = int(os.environ.get('PORT', '5000'))
 
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -38,7 +38,6 @@ def main():
 
     updater = Updater(TOKEN)
 
-
     dispatcher = updater.dispatcher
 
     updater.start_webhook(listen="0.0.0.0",
@@ -49,10 +48,7 @@ def main():
     dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(CommandHandler("help", help))
 
-
-
     dispatcher.add_error_handler(error)
-
 
     updater.idle()
 
