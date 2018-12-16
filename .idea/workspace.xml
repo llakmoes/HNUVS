@@ -15,10 +15,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="78" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
+            <state relative-caret-position="-314">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#46#55#0" expanded="true" />
+                <element signature="e#1148#1240#0" />
+                <element signature="e#1270#1363#0" />
+                <element signature="e#1393#1472#0" />
+                <element signature="e#1510#1612#0" />
               </folding>
             </state>
           </provider>
@@ -89,7 +93,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544981654491</updated>
-      <workItem from="1544981656107" duration="1364000" />
+      <workItem from="1544981656107" duration="1878000" />
     </task>
     <task id="LOCAL-00001" summary="Create bot">
       <created>1544982526409</created>
@@ -102,7 +106,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1364000" />
+    <option name="totallyTimeSpent" value="1878000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="834" extended-state="6" />
@@ -139,12 +143,23 @@
     <option name="LAST_COMMIT_MESSAGE" value="Create bot" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="78" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
+        <state relative-caret-position="-314">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#46#55#0" expanded="true" />
+            <element signature="e#1148#1240#0" />
+            <element signature="e#1270#1363#0" />
+            <element signature="e#1393#1472#0" />
+            <element signature="e#1510#1612#0" />
           </folding>
         </state>
       </provider>
