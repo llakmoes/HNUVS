@@ -46,15 +46,14 @@ def main():
                           url_path=TOKEN)
     updater.bot.set_webhook("https://hnuvs.herokuapp.com/" + TOKEN)
 
-    # on different commands - answer in Telegram
     dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(CommandHandler("help", help))
 
 
-    # log all errors
+
     dispatcher.add_error_handler(error)
 
-    # Start the Bot
+
     updater.idle()
 
 
