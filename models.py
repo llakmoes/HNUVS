@@ -7,8 +7,9 @@ Base = declarative_base()
 
 
 class User(Base):
+    __tablename__ = 'user'
     user_chat_id = Column(Integer, primary_key=True)
-    user_name = Column(String(20), primary_key=True)
+    user_name = Column(String(20))
 
     def __repr__(self):
         return "<User(Name='%s', Chat_id='%s')>" % (
@@ -20,9 +21,10 @@ class User(Base):
 
 
 class Subscriber(Base):
+    __tablename__ = 'subscriber'
     user_id = Column(Integer, ForeignKey('user.user_chat_id'), primary_key=True)
-    group_id = Column(Integer, ForeignKey('group.group_id'), primary_key=True)
-    date = Column(DATETIME, default=datetime.datetime.utcnow, primary_key=True)
+    group_id = Column(Integer, ForeignKey('group.group_id'))
+    date = Column(DATETIME, default=datetime.datetime.utcnow)
 
     def __repr__(self):
         return "<User(user_id='%s', group_id='%s')>" % (
@@ -34,6 +36,7 @@ class Subscriber(Base):
 
 
 class Teacher(Base):
+    __tablename__ = 'teacher'
     id = Column(Integer, primary_key=True)
     first_name = Column(String(20))
     middle_name = Column(String(20))
@@ -51,6 +54,7 @@ class Teacher(Base):
 
 
 class Lesson(Base):
+    __tablename__ = 'lesson'
     id = Column(Integer, primary_key=True)
     lesson_type = Column(Integer, ForeignKey('lesson_type.id'))
     lesson_name = Column(Integer, ForeignKey('lesson_name.id'))
@@ -70,10 +74,11 @@ class Lesson(Base):
 
 
 class Group(Base):
+    __tablename__ = 'group'
     group_id = Column(Integer, primary_key=True)
-    group = Column(String(20), primary_key=True)
-    faculty_id = Column(Integer, ForeignKey('faculty.faculty_id'), primary_key=True)
-    course = Column(Integer, primary_key=True)
+    group = Column(String(20))
+    faculty_id = Column(Integer, ForeignKey('faculty.faculty_id'))
+    course = Column(Integer)
 
     def __repr__(self):
         return "<Group(group='%s', faculty_id='%s', course='%s')>" % (
@@ -87,8 +92,9 @@ class Group(Base):
 
 
 class Faculty(Base):
+    __tablename__ = 'faculty'
     faculty_id = Column(Integer, primary_key=True)
-    fullname = Column(String(200), primary_key=True)
+    fullname = Column(String(200))
 
     def __repr__(self):
         return "<Faculty(fullname='%s', faculty_id='%s')>" % (
@@ -100,6 +106,7 @@ class Faculty(Base):
 
 
 class Schedule(Base):
+    __tablename__ = 'schedule'
     id = Column(Integer, primary_key=True)
     date = Column(DATETIME)
     lesson_id = Column(Integer, ForeignKey('lesson.id'))
@@ -107,7 +114,7 @@ class Schedule(Base):
     group = Column(Integer, ForeignKey('group.group_id'))
     start_time = Column(String(20))
     finish_time = Column(String(20))
-    __table_args__ = (UniqueConstraint('date', 'lesson_id', 'number', 'group', 'start', 'finish'),)
+    __table_args__ = (UniqueConstraint('date', 'lesson_id', 'number', 'group', 'start_time', 'finish_time'),)
 
     def __repr__(self):
         return "<Schedule(date='%s', number='%s', group='%s', start='%s', finish='%s')>" % (
@@ -122,6 +129,7 @@ class Schedule(Base):
 
 
 class LessonType(Base):
+    __tablename__ = 'lesson_type'
     id = Column(Integer, primary_key=True)
     type = Column(String(20), unique=True)
 
@@ -133,6 +141,7 @@ class LessonType(Base):
 
 
 class LessonName(Base):
+    __tablename__ = 'lesson_name'
     id = Column(Integer, primary_key=True)
     name = Column(String(200), unique=True)
 
@@ -144,6 +153,7 @@ class LessonName(Base):
 
 
 class LessonRoom(Base):
+    __tablename__ = 'lesson_room'
     id = Column(Integer, primary_key=True)
     room = Column(String(20), unique=True)
 
